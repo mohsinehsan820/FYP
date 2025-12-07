@@ -161,7 +161,8 @@ const AddProduct = () => {
                             {images.length} image(s) selected
                         </small>
                     )}
-                </div>div>
+                </div>
+                <div>
                     <div className="col-md-6 mb-3">
                         <label className="form-label">Stock</label>
                         <input type="number" className="form-control" name="countInStock" onChange={handleChange} required />
