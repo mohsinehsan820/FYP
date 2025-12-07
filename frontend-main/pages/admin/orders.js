@@ -64,7 +64,7 @@ const AdminOrders = () => {
                             <tr key={order._id}>
                                 <td>{order._id}</td>
                                 <td>{order.user?.email || 'Unknown'}</td>
-                                <td>${order.totalPrice}</td>
+                                <td>${order.totalAmount}</td>
                                 <td>
                                     <span className={`badge ${order.status === 'Delivered' ? 'bg-success' : order.status === 'Cancelled' ? 'bg-danger' : 'bg-warning'}`}>
                                         {order.status || 'Pending'}

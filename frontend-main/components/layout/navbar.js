@@ -18,7 +18,8 @@ export default function Navbar() {
         dispatch(logout());
     }
 
-    const isAuthenticated = useSelector((state) => state.auth.isAuthenticated)
+    const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
+    const user = useSelector((state) => state.auth.user);
     return (
         <>
             <div className="container-fluid">
@@ -69,7 +70,14 @@ export default function Navbar() {
 
                                 {isAuthenticated ? (
                                     <>
-                                        <a href="my-orders">
+                                        {user?.isAdmin && (
+                                            <a href="/admin/products">
+                                                <button className="dropdown-item" type="button">
+                                                    <i className="fas fa-tachometer-alt mr-2"></i>Admin Dashboard
+                                                </button>
+                                            </a>
+                                        )}
+                                        <a href="/my-orders">
                                             <button className="dropdown-item" type="button">My Orders</button>
                                         </a>
                                         <button className="dropdown-item" type="button" onClick={() => signoutHandler()}>
