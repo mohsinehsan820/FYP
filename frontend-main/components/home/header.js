@@ -3,6 +3,9 @@ export default function Header() {
         { img: "/img/carousel-3.png" },
         { img: "/img/carousel-2.png" },
         { img: "/img/carousel-1.png" },
+        { img: "/img/carousel-4.png" },
+        { img: "/img/carousel-5.png" },
+        { img: "/img/carousel-6.png" },
     ];
 
     return (
