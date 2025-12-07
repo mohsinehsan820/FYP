@@ -8,7 +8,7 @@ const EditProduct = () => {
     const router = useRouter();
     const { id } = router.query;
     const ADMIN_API_URL = process.env.NEXT_PUBLIC_ADMIN_API_URL || 'http://localhost:3001';
-    const PUBLIC_API_URL = process.env.NEXT_PUBLIC_PUBLIC_API_URL || 'http://localhost:3002';
+    const PUBLIC_API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3002';
     
     const [formData, setFormData] = useState({
         name: '',
