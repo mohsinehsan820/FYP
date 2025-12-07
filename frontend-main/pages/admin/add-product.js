@@ -118,6 +118,18 @@ const AddProduct = () => {
                 </div>
                 <div className="mb-3">
                     <label className="form-label">Description</label>
+                    <textarea className="form-control" name="description" onChange={handleChange} required />
+                </div>
+                <div className="row">
+                    <div className="col-md-6 mb-3">
+                        <label className="form-label">Price</label>
+                        <input type="number" className="form-control" name="price" onChange={handleChange} required />
+                    </div>
+                    <div className="col-md-6 mb-3">
+                        <label className="form-label">Stock</label>
+                        <input type="number" className="form-control" name="countInStock" onChange={handleChange} required />
+                    </div>
+                </div>
                 <div className="mb-3">
                     <label className="form-label">Product Images (Select multiple)</label>
                     <input 
@@ -160,19 +172,6 @@ const AddProduct = () => {
                         <small className="form-text text-muted d-block mt-2">
                             {images.length} image(s) selected
                         </small>
-                    )}
-                </div>
-                <div>
-                    <div className="col-md-6 mb-3">
-                        <label className="form-label">Stock</label>
-                        <input type="number" className="form-control" name="countInStock" onChange={handleChange} required />
-                    </div>
-                </div>
-                <div className="mb-3">
-                    <label className="form-label">Images (Select multiple)</label>
-                    <input type="file" className="form-control" onChange={handleImageChange} multiple accept="image/*" required />
-                    {images.length > 0 && (
-                        <small className="form-text text-muted">{images.length} image(s) selected</small>
                     )}
                 </div>
                 <div className="mb-3 form-check">
