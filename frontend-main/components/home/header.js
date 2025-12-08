@@ -6,6 +6,12 @@ export default function Header() {
         { img: "/img/carousel-4.png" },
         { img: "/img/carousel-5.png" },
         { img: "/img/carousel-6.png" },
+        { img: "/img/carousel-7.png" },
+        { img: "/img/carousel-8.png" },
+        { img: "/img/carousel-9.png" },
+        { img: "/img/carousel-10.png" },
+        { img: "/img/carousel-11.png" },
+        { img: "/img/carousel-12.png" },
     ];
 
     return (
