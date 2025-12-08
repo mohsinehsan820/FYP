@@ -13,7 +13,7 @@ export default function Header() {
             <div className="container-fluid mb-3">
                 <div className="row px-xl-5">
                     <div className="col-lg-12">
-                        <div id="header-carousel" className="carousel slide carousel-fade mb-30 mb-lg-0" data-ride="carousel">
+                        <div id="header-carousel" className="carousel slide carousel-fade mb-30 mb-lg-0" data-ride="carousel" data-interval="3000">
                             {/* Indicators */}
                             <ol className="carousel-indicators">
                                 {array.map((_, index) => (
