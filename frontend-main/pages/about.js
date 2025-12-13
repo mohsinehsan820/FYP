@@ -1,377 +1,173 @@
-import Link from "next/link";
 import Header from "@/components/home/header";
 
 const About = () => {
+    const features = [
+        {
+            icon: "fa-shopping-bag",
+            title: "Wide Product Range",
+            description: "Browse through thousands of products across multiple categories including fashion, electronics, and daily essentials.",
+            color: "#667eea"
+        },
+        {
+            icon: "fa-shield-alt",
+            title: "Secure Payments",
+            description: "Shop with confidence using our secure payment gateway with SSL encryption and multiple payment options.",
+            color: "#f5576c"
+        },
+        {
+            icon: "fa-truck-fast",
+            title: "Fast Delivery",
+            description: "Get your orders delivered quickly with our reliable shipping partners and real-time tracking.",
+            color: "#28a745"
+        },
+        {
+            icon: "fa-headset",
+            title: "24/7 Support",
+            description: "Our dedicated customer support team is always ready to help you with any questions or concerns.",
+            color: "#ffc107"
+        }
+    ];
+
+    const stats = [
+        { number: "50K+", label: "Happy Customers", icon: "fa-users" },
+        { number: "10K+", label: "Products", icon: "fa-box" },
+        { number: "500+", label: "Brands", icon: "fa-store" },
+        { number: "99%", label: "Satisfaction", icon: "fa-smile" }
+    ];
+
+    const team = [
+        {
+            name: "Mohsin Ehsan",
+            role: "Founder & CEO",
+            description: "Leading the vision with passion for innovation"
+        },
+        {
+            name: "Muhammad Ayyan",
+            role: "Operations Manager",
+            description: "Ensuring smooth operations and customer satisfaction"
+        },
+        {
+            name: "Hamza Kamran",
+            role: "Customer Success",
+            description: "Dedicated to making every customer happy"
+        }
+    ];
+
+    const values = [
+        {
+            icon: "fa-heart",
+            title: "Customer First",
+            description: "Your satisfaction is our top priority. We go the extra mile to ensure you have the best shopping experience."
+        },
+        {
+            icon: "fa-star",
+            title: "Quality Assured",
+            description: "Every product is carefully selected and verified to meet our high quality standards."
+        },
+        {
+            icon: "fa-handshake",
+            title: "Trust & Transparency",
+            description: "We believe in honest communication and building long-term relationships with our customers."
+        },
+        {
+            icon: "fa-leaf",
+            title: "Sustainability",
+            description: "Committed to eco-friendly practices and supporting sustainable brands whenever possible."
+        }
+    ];
+
     return (
         <>
             <Header />
-            <div className="container-fluid pt-5">
+            
+            {/* Hero Section */}
+            <div className="container-fluid bg-light py-5">
                 <div className="container">
                     <div className="row px-xl-5">
-                        <div className="col-lg-12 mb-5">
-                            <h2 className="section-title position-relative text-uppercase mb-4">
-                                <span className="bg-secondary pr-3">About This Project</span>
-                            </h2>
-                            <div className="bg-light p-30">
-                                <div className="row">
-                                    <div className="col-md-12">
-                                        <h3 className="mb-4">E-Commerce Platform - Full Stack Application</h3>
-                                        <p className="mb-4 lead">
-                                            A modern, full-featured e-commerce platform built with cutting-edge technologies, 
-                                            featuring microservices architecture, real-time reviews, cart management, and comprehensive admin controls.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
+                        <div className="col-lg-12 text-center">
+                            <h1 className="display-4 mb-3">About BAZARISTAN</h1>
+                            <p className="lead text-muted mb-4">
+                                Your ultimate destination for fashion, electronics, and everyday essentials
+                            </p>
+                            <p className="text-muted mx-auto" style={{ maxWidth: "800px" }}>
+                                Welcome to BAZARISTAN, where convenience meets style. We are passionate about bringing you the finest 
+                                selection of products at competitive prices. Our mission is to make online shopping easy, secure, 
+                                and enjoyable for everyone.
+                            </p>
                         </div>
                     </div>
+                </div>
+            </div>
 
-                    {/* Technology Stack */}
-                    <div className="row px-xl-5 mb-5">
-                        <div className="col-lg-12">
-                            <h3 className="section-title position-relative text-uppercase mb-4">
-                                <span className="bg-secondary pr-3">Technology Stack</span>
-                            </h3>
-                            <div className="row">
-                                <div className="col-md-6 mb-4">
-                                    <div className="bg-white border rounded p-4 h-100 shadow-sm">
-                                        <div className="d-flex align-items-center mb-3">
-                                            <i className="fab fa-react fa-3x text-primary mr-3"></i>
-                                            <h4 className="mb-0">Frontend</h4>
-                                        </div>
-                                        <ul className="list-unstyled">
-                                            <li className="mb-2"><i className="fa fa-check text-success mr-2"></i><strong>Next.js 13</strong> - React framework with SSR</li>
-                                            <li className="mb-2"><i className="fa fa-check text-success mr-2"></i><strong>React 18</strong> - UI library with hooks</li>
-                                            <li className="mb-2"><i className="fa fa-check text-success mr-2"></i><strong>Redux Toolkit</strong> - State management</li>
-                                            <li className="mb-2"><i className="fa fa-check text-success mr-2"></i><strong>Bootstrap 5</strong> - Responsive UI framework</li>
-                                            <li className="mb-2"><i className="fa fa-check text-success mr-2"></i><strong>Font Awesome</strong> - Icons library</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div className="col-md-6 mb-4">
-                                    <div className="bg-white border rounded p-4 h-100 shadow-sm">
-                                        <div className="d-flex align-items-center mb-3">
-                                            <i className="fab fa-node fa-3x text-success mr-3"></i>
-                                            <h4 className="mb-0">Backend</h4>
-                                        </div>
-                                        <ul className="list-unstyled">
-                                            <li className="mb-2"><i className="fa fa-check text-success mr-2"></i><strong>Node.js</strong> - JavaScript runtime</li>
-                                            <li className="mb-2"><i className="fa fa-check text-success mr-2"></i><strong>Express.js</strong> - Web framework</li>
-                                            <li className="mb-2"><i className="fa fa-check text-success mr-2"></i><strong>MongoDB</strong> - NoSQL database</li>
-                                            <li className="mb-2"><i className="fa fa-check text-success mr-2"></i><strong>Mongoose</strong> - ODM for MongoDB</li>
-                                            <li className="mb-2"><i className="fa fa-check text-success mr-2"></i><strong>Multer & Sharp</strong> - Image upload & processing</li>
-                                        </ul>
-                                    </div>
-                                </div>
+            {/* Stats Section */}
+            <div className="container-fluid py-5">
+                <div className="row px-xl-5">
+                    {stats.map((stat, index) => (
+                        <div key={index} className="col-lg-3 col-md-6 mb-4">
+                            <div className="bg-light text-center rounded p-4 shadow-sm hover-card" style={{ transition: "all 0.3s ease" }}>
+                                <i className={`fa ${stat.icon} fa-3x text-primary mb-3`}></i>
+                                <h2 className="display-4 font-weight-bold text-primary mb-0">{stat.number}</h2>
+                                <p className="text-muted mb-0">{stat.label}</p>
                             </div>
                         </div>
-                    </div>
+                    ))}
+                </div>
+            </div>
 
-                    {/* Architecture */}
-                    <div className="row px-xl-5 mb-5">
-                        <div className="col-lg-12">
-                            <h3 className="section-title position-relative text-uppercase mb-4">
-                                <span className="bg-secondary pr-3">Microservices Architecture</span>
-                            </h3>
-                            <div className="bg-white border rounded p-4 shadow-sm">
-                                <p className="mb-4">The application follows a microservices architecture with four independent services:</p>
-                                <div className="row">
-                                    <div className="col-md-3 mb-3">
-                                        <div className="border rounded p-3 h-100 bg-light">
-                                            <i className="fa fa-cog fa-2x text-primary mb-3"></i>
-                                            <h5>Admin Backend</h5>
-                                            <p className="small mb-0">Manages products, categories, and reviews with full CRUD operations</p>
-                                        </div>
-                                    </div>
-                                    <div className="col-md-3 mb-3">
-                                        <div className="border rounded p-3 h-100 bg-light">
-                                            <i className="fa fa-globe fa-2x text-info mb-3"></i>
-                                            <h5>Public Backend</h5>
-                                            <p className="small mb-0">Serves product and category data to frontend without authentication</p>
-                                        </div>
-                                    </div>
-                                    <div className="col-md-3 mb-3">
-                                        <div className="border rounded p-3 h-100 bg-light">
-                                            <i className="fa fa-users fa-2x text-success mb-3"></i>
-                                            <h5>Users Service</h5>
-                                            <p className="small mb-0">Handles user authentication, cart management, and order processing</p>
-                                        </div>
-                                    </div>
-                                    <div className="col-md-3 mb-3">
-                                        <div className="border rounded p-3 h-100 bg-light">
-                                            <i className="fa fa-desktop fa-2x text-warning mb-3"></i>
-                                            <h5>Frontend</h5>
-                                            <p className="small mb-0">Next.js application with SSR, dynamic routing, and responsive design</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Key Features */}
-                    <div className="row px-xl-5 mb-5">
-                        <div className="col-lg-12">
-                            <h3 className="section-title position-relative text-uppercase mb-4">
-                                <span className="bg-secondary pr-3">Key Features</span>
-                            </h3>
-                            <div className="row">
-                                <div className="col-md-4 mb-4">
-                                    <div className="bg-primary text-white border rounded p-4 h-100">
-                                        <i className="fa fa-shopping-cart fa-3x mb-3"></i>
-                                        <h5>Shopping Cart</h5>
-                                        <ul className="mb-0 pl-3">
-                                            <li>Add/remove products</li>
-                                            <li>Quantity management</li>
-                                            <li>Real-time price calculation</li>
-                                            <li>Persistent cart data</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div className="col-md-4 mb-4">
-                                    <div className="bg-success text-white border rounded p-4 h-100">
-                                        <i className="fa fa-star fa-3x mb-3"></i>
-                                        <h5>Review System</h5>
-                                        <ul className="mb-0 pl-3">
-                                            <li>Submit product reviews</li>
-                                            <li>5-star rating system</li>
-                                            <li>Dynamic rating calculation</li>
-                                            <li>Rating breakdown charts</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div className="col-md-4 mb-4">
-                                    <div className="bg-info text-white border rounded p-4 h-100">
-                                        <i className="fa fa-user-shield fa-3x mb-3"></i>
-                                        <h5>User Authentication</h5>
-                                        <ul className="mb-0 pl-3">
-                                            <li>Secure sign up/sign in</li>
-                                            <li>JWT token authentication</li>
-                                            <li>Protected routes</li>
-                                            <li>User profile management</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div className="col-md-4 mb-4">
-                                    <div className="bg-warning text-dark border rounded p-4 h-100">
-                                        <i className="fa fa-boxes fa-3x mb-3"></i>
-                                        <h5>Product Management</h5>
-                                        <ul className="mb-0 pl-3">
-                                            <li>Multiple image upload</li>
-                                            <li>Category organization</li>
-                                            <li>Stock tracking</li>
-                                            <li>Featured products</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div className="col-md-4 mb-4">
-                                    <div className="bg-danger text-white border rounded p-4 h-100">
-                                        <i className="fa fa-receipt fa-3x mb-3"></i>
-                                        <h5>Order Processing</h5>
-                                        <ul className="mb-0 pl-3">
-                                            <li>Checkout system</li>
-                                            <li>Order history</li>
-                                            <li>Payment status tracking</li>
-                                            <li>Order status updates</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div className="col-md-4 mb-4">
-                                    <div className="bg-secondary text-black border rounded p-4 h-100">
-                                        <i className="fa fa-filter fa-3x mb-3"></i>
-                                        <h5>Search & Filter</h5>
-                                        <ul className="mb-0 pl-3">
-                                            <li>Category filtering</li>
-                                            <li>Price range filter</li>
-                                            <li>Product search</li>
-                                            <li>Sort by price/rating</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Project Structure */}
-                    <div className="row px-xl-5 mb-5">
-                        <div className="col-lg-12">
-                            <h3 className="section-title position-relative text-uppercase mb-4">
-                                <span className="bg-secondary pr-3">Project Structure</span>
-                            </h3>
-                            <div className="row">
-                                <div className="col-md-6 mb-4">
-                                    <div className="bg-white border rounded p-4 h-100">
-                                        <h5 className="mb-3"><i className="fa fa-folder-open text-primary mr-2"></i>Backend Services</h5>
-                                        <pre className="bg-light p-3 rounded small">
-{`backend-main/
-├── controllers/     # Business logic
-├── models/          # Database schemas
-├── routes/          # API endpoints
-├── middlewares/     # Auth & validation
-├── utils/           # Helper functions
-└── config/          # Database config
-
-users-main/
-├── controllers/     # User, cart, orders
-├── models/          # User & order models
-├── routes/          # User routes
-└── middleware/      # JWT authentication`}
-                                        </pre>
-                                    </div>
-                                </div>
-                                <div className="col-md-6 mb-4">
-                                    <div className="bg-white border rounded p-4 h-100">
-                                        <h5 className="mb-3"><i className="fa fa-folder-open text-success mr-2"></i>Frontend Application</h5>
-                                        <pre className="bg-light p-3 rounded small">
-{`frontend-main/
-├── pages/           # Next.js pages
-│   ├── products/    # Product pages
-│   ├── category/    # Category pages
-│   └── _app.js      # App wrapper
-├── components/
-│   ├── home/        # Home components
-│   ├── shop/        # Shop components
-│   ├── shared/      # Reusable components
-│   └── contexts/    # Context providers
-├── redux/           # State management
-└── public/          # Static assets`}
-                                        </pre>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Database Models */}
-                    <div className="row px-xl-5 mb-5">
-                        <div className="col-lg-12">
-                            <h3 className="section-title position-relative text-uppercase mb-4">
-                                <span className="bg-secondary pr-3">Database Models</span>
-                            </h3>
-                            <div className="bg-white border rounded p-4">
-                                <div className="row">
-                                    <div className="col-md-3 mb-3">
-                                        <div className="text-center p-3 border rounded bg-light">
-                                            <i className="fa fa-box fa-2x text-primary mb-2"></i>
-                                            <h6>Product</h6>
-                                            <small className="text-muted">Name, slug, images, price, stock, rating, category, brand</small>
-                                        </div>
-                                    </div>
-                                    <div className="col-md-3 mb-3">
-                                        <div className="text-center p-3 border rounded bg-light">
-                                            <i className="fa fa-list fa-2x text-info mb-2"></i>
-                                            <h6>Category</h6>
-                                            <small className="text-muted">Name, slug, icon, description</small>
-                                        </div>
-                                    </div>
-                                    <div className="col-md-3 mb-3">
-                                        <div className="text-center p-3 border rounded bg-light">
-                                            <i className="fa fa-user fa-2x text-success mb-2"></i>
-                                            <h6>User</h6>
-                                            <small className="text-muted">Name, email, password, address, phone</small>
-                                        </div>
-                                    </div>
-                                    <div className="col-md-3 mb-3">
-                                        <div className="text-center p-3 border rounded bg-light">
-                                            <i className="fa fa-shopping-bag fa-2x text-warning mb-2"></i>
-                                            <h6>Order</h6>
-                                            <small className="text-muted">User, items, total, status, payment status</small>
-                                        </div>
-                                    </div>
-                                    <div className="col-md-3 mb-3">
-                                        <div className="text-center p-3 border rounded bg-light">
-                                            <i className="fa fa-shopping-cart fa-2x text-danger mb-2"></i>
-                                            <h6>Cart</h6>
-                                            <small className="text-muted">User, products, quantities</small>
-                                        </div>
-                                    </div>
-                                    <div className="col-md-3 mb-3">
-                                        <div className="text-center p-3 border rounded bg-light">
-                                            <i className="fa fa-comment fa-2x text-primary mb-2"></i>
-                                            <h6>Review</h6>
-                                            <small className="text-muted">Product, user, rating, comment, date</small>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Development Features */}
-                    <div className="row px-xl-5 mb-5">
-                        <div className="col-lg-12">
-                            <h3 className="section-title position-relative text-uppercase mb-4">
-                                <span className="bg-secondary pr-3">Development Highlights</span>
-                            </h3>
-                            <div className="row">
-                                <div className="col-md-4 mb-3">
-                                    <div className="bg-light border-left border-primary border-4 p-4 h-100">
-                                        <i className="fa fa-code fa-2x text-primary mb-3"></i>
-                                        <h5>Modern JavaScript</h5>
-                                        <p className="mb-0">ES6+ features, async/await, arrow functions, destructuring</p>
-                                    </div>
-                                </div>
-                                <div className="col-md-4 mb-3">
-                                    <div className="bg-light border-left border-success border-4 p-4 h-100">
-                                        <i className="fa fa-mobile-alt fa-2x text-success mb-3"></i>
-                                        <h5>Responsive Design</h5>
-                                        <p className="mb-0">Mobile-first approach with Bootstrap grid system</p>
-                                    </div>
-                                </div>
-                                <div className="col-md-4 mb-3">
-                                    <div className="bg-light border-left border-info border-4 p-4 h-100">
-                                        <i className="fa fa-shield-alt fa-2x text-info mb-3"></i>
-                                        <h5>Security</h5>
-                                        <p className="mb-0">JWT authentication, password hashing, protected routes</p>
-                                    </div>
-                                </div>
-                                <div className="col-md-4 mb-3">
-                                    <div className="bg-light border-left border-warning border-4 p-4 h-100">
-                                        <i className="fa fa-tachometer-alt fa-2x text-warning mb-3"></i>
-                                        <h5>Performance</h5>
-                                        <p className="mb-0">Server-side rendering, image optimization, lazy loading</p>
-                                    </div>
-                                </div>
-                                <div className="col-md-4 mb-3">
-                                    <div className="bg-light border-left border-danger border-4 p-4 h-100">
-                                        <i className="fa fa-plug fa-2x text-danger mb-3"></i>
-                                        <h5>RESTful API</h5>
-                                        <p className="mb-0">Clean API design with proper HTTP methods and status codes</p>
-                                    </div>
-                                </div>
-                                <div className="col-md-4 mb-3">
-                                    <div className="bg-light border-left border-secondary border-4 p-4 h-100">
-                                        <i className="fa fa-sync fa-2x text-secondary mb-3"></i>
-                                        <h5>Real-time Updates</h5>
-                                        <p className="mb-0">Dynamic cart updates, live rating calculations</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Contact */}
+            {/* Our Story */}
+            <div className="container-fluid bg-light py-5">
+                <div className="container">
                     <div className="row px-xl-5">
-                        <div className="col-lg-12">
-                            <div className="bg-primary text-white rounded p-5 text-center">
-                                <h3 className="mb-3">Full Stack E-Commerce Solution</h3>
-                                <p className="mb-4">Built with modern technologies and best practices for scalability, security, and performance.</p>
-                                <div className="d-flex justify-content-center">
-                                    <div className="mx-3">
-                                        <i className="fab fa-github fa-2x mb-2"></i>
-                                        <p className="mb-0">Open Source</p>
+                        <div className="col-lg-6 mb-4">
+                            <h2 className="section-title position-relative text-uppercase mb-4">
+                                <span className="bg-secondary pr-3">Our Story</span>
+                            </h2>
+                            <p className="mb-3">
+                                Founded in 2020, BAZARISTAN started with a simple vision: to create a one-stop online marketplace 
+                                that brings quality products to customers across the country. What began as a small startup has 
+                                grown into a trusted platform serving thousands of happy customers.
+                            </p>
+                            <p className="mb-3">
+                                We understand that shopping online should be convenient, reliable, and secure. That's why we've 
+                                invested in building a robust platform with intuitive navigation, secure payment options, and 
+                                exceptional customer service.
+                            </p>
+                            <p className="mb-0">
+                                Today, we partner with hundreds of trusted brands and sellers to bring you an extensive collection 
+                                of products ranging from fashion and beauty to electronics and home essentials.
+                            </p>
+                        </div>
+                        <div className="col-lg-6 mb-4">
+                            <h2 className="section-title position-relative text-uppercase mb-4">
+                                <span className="bg-secondary pr-3">Why Choose Us</span>
+                            </h2>
+                            <div className="mb-3">
+                                <div className="d-flex align-items-start mb-3">
+                                    <i className="fa fa-check-circle fa-2x text-success mr-3 mt-1"></i>
+                                    <div>
+                                        <h5 className="mb-1">Authentic Products</h5>
+                                        <p className="mb-0 text-muted">100% genuine products from verified sellers and brands</p>
                                     </div>
-                                    <div className="mx-3">
-                                        <i className="fa fa-server fa-2x mb-2"></i>
-                                        <p className="mb-0">Microservices</p>
+                                </div>
+                                <div className="d-flex align-items-start mb-3">
+                                    <i className="fa fa-check-circle fa-2x text-success mr-3 mt-1"></i>
+                                    <div>
+                                        <h5 className="mb-1">Best Prices</h5>
+                                        <p className="mb-0 text-muted">Competitive pricing with regular discounts and offers</p>
                                     </div>
-                                    <div className="mx-3">
-                                        <i className="fa fa-mobile-alt fa-2x mb-2"></i>
-                                        <p className="mb-0">Responsive</p>
+                                </div>
+                                <div className="d-flex align-items-start mb-3">
+                                    <i className="fa fa-check-circle fa-2x text-success mr-3 mt-1"></i>
+                                    <div>
+                                        <h5 className="mb-1">Easy Returns</h5>
+                                        <p className="mb-0 text-muted">Hassle-free 14-day return policy for your peace of mind</p>
                                     </div>
-                                    <div className="mx-3">
-                                        <i className="fa fa-rocket fa-2x mb-2"></i>
-                                        <p className="mb-0">Production Ready</p>
+                                </div>
+                                <div className="d-flex align-items-start">
+                                    <i className="fa fa-check-circle fa-2x text-success mr-3 mt-1"></i>
+                                    <div>
+                                        <h5 className="mb-1">Secure Shopping</h5>
+                                        <p className="mb-0 text-muted">Your data is protected with industry-standard encryption</p>
                                     </div>
                                 </div>
                             </div>
@@ -379,8 +175,148 @@ users-main/
                     </div>
                 </div>
             </div>
+
+            {/* Features Grid */}
+            <div className="container-fluid py-5">
+                <div className="container">
+                    <div className="text-center mb-5">
+                        <h2 className="section-title position-relative text-uppercase mx-xl-5">
+                            <span className="bg-secondary pr-3">What We Offer</span>
+                        </h2>
+                    </div>
+                    <div className="row px-xl-5">
+                        {features.map((feature, index) => (
+                            <div key={index} className="col-lg-6 mb-4">
+                                <div className="bg-light rounded p-4 h-100 shadow-sm hover-card" style={{ transition: "all 0.3s ease" }}>
+                                    <div className="d-flex align-items-start">
+                                        <div 
+                                            className="rounded-circle d-flex align-items-center justify-content-center mr-3" 
+                                            style={{ 
+                                                width: "60px", 
+                                                height: "60px", 
+                                                backgroundColor: feature.color + "20",
+                                                minWidth: "60px"
+                                            }}
+                                        >
+                                            <i className={`fa ${feature.icon} fa-2x`} style={{ color: feature.color }}></i>
+                                        </div>
+                                        <div>
+                                            <h5 className="mb-2">{feature.title}</h5>
+                                            <p className="mb-0 text-muted">{feature.description}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+
+            {/* Our Values */}
+            <div className="container-fluid bg-light py-5">
+                <div className="container">
+                    <div className="text-center mb-5">
+                        <h2 className="section-title position-relative text-uppercase mx-xl-5">
+                            <span className="bg-secondary pr-3">Our Core Values</span>
+                        </h2>
+                        <p className="text-muted mt-3">The principles that guide everything we do</p>
+                    </div>
+                    <div className="row px-xl-5">
+                        {values.map((value, index) => (
+                            <div key={index} className="col-lg-3 col-md-6 mb-4">
+                                <div className="text-center bg-white rounded p-4 h-100 shadow-sm">
+                                    <div 
+                                        className="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" 
+                                        style={{ 
+                                            width: "80px", 
+                                            height: "80px", 
+                                            backgroundColor: "#667eea20"
+                                        }}
+                                    >
+                                        <i className={`fa ${value.icon} fa-2x text-primary`}></i>
+                                    </div>
+                                    <h5 className="mb-3">{value.title}</h5>
+                                    <p className="mb-0 text-muted small">{value.description}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+
+            {/* Team Section */}
+            <div className="container-fluid py-5">
+                <div className="container">
+                    <div className="text-center mb-5">
+                        <h2 className="section-title position-relative text-uppercase mx-xl-5">
+                            <span className="bg-secondary pr-3">Meet Our Team</span>
+                        </h2>
+                        <p className="text-muted mt-3">The passionate people behind BAZARISTAN</p>
+                    </div>
+                    <div className="row px-xl-5 justify-content-center">
+                        {team.map((member, index) => (
+                            <div key={index} className="col-lg-4 col-md-6 mb-4">
+                                <div className="bg-light rounded text-center p-4 shadow-sm hover-card" style={{ transition: "all 0.3s ease" }}>
+                                    <div 
+                                        className="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" 
+                                        style={{ 
+                                            width: "120px", 
+                                            height: "120px", 
+                                            backgroundColor: "#667eea",
+                                            fontSize: "48px",
+                                            color: "white",
+                                            fontWeight: "bold"
+                                        }}
+                                    >
+                                        {member.name.split(' ').map(n => n[0]).join('')}
+                                    </div>
+                                    <h5 className="mb-1">{member.name}</h5>
+                                    <p className="text-primary mb-2">{member.role}</p>
+                                    <p className="text-muted small mb-3">{member.description}</p>
+                                    <div className="d-flex justify-content-center">
+                                        <a className="btn btn-sm btn-outline-primary rounded-circle mx-1" href="#" style={{ width: "35px", height: "35px", padding: "8px" }}>
+                                            <i className="fab fa-facebook-f"></i>
+                                        </a>
+                                        <a className="btn btn-sm btn-outline-primary rounded-circle mx-1" href="#" style={{ width: "35px", height: "35px", padding: "8px" }}>
+                                            <i className="fab fa-twitter"></i>
+                                        </a>
+                                        <a className="btn btn-sm btn-outline-primary rounded-circle mx-1" href="#" style={{ width: "35px", height: "35px", padding: "8px" }}>
+                                            <i className="fab fa-linkedin-in"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+
+            {/* CTA Section */}
+            <div className="container-fluid py-5" style={{ backgroundColor: "#667eea" }}>
+                <div className="container">
+                    <div className="row px-xl-5">
+                        <div className="col-lg-12 text-center text-white">
+                            <h2 className="mb-4">Ready to Start Shopping?</h2>
+                            <p className="mb-4 lead">
+                                Join thousands of satisfied customers and discover amazing products at unbeatable prices
+                            </p>
+                            <a href="/shop" className="btn btn-light btn-lg px-5 py-3 font-weight-bold">
+                                Browse Products
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <style jsx>{`
+                .hover-card:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15) !important;
+                }
+            `}</style>
         </>
     );
-}
+};
 
 export default About;
+
