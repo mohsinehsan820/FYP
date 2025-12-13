@@ -24,14 +24,49 @@ export default function Navbar() {
         <>
             <div className="container-fluid">
                 <div className="row bg-secondary py-1 px-xl-5">
-                    <div className="col-lg-6 text-center text-lg-right">
-                        <div className="d-inline-flex align-items-center d-block d-lg-none">
-                            {/* <a href="" className="btn px-0 ml-2">
-                                <i className="fas fa-heart text-dark"></i>
-                                <span className="badge text-dark border border-dark rounded-circle"
-                                    style={{ paddingBottom: '2px' }}>0</span>
-                            </a> */}
-                            <a href="" className="btn px-0 ml-2">
+                    <div className="col-lg-6 d-flex justify-content-between align-items-center d-lg-none px-3">
+                        <div className="btn-group">
+                            <button type="button" className="btn btn-sm btn-light dropdown-toggle"
+                                data-toggle="dropdown">
+                                <i className="fas fa-user mr-1"></i>Account
+                            </button>
+                            <div className="dropdown-menu">
+                                {isAuthenticated ? (
+                                    <>
+                                        {user?.isAdmin && (
+                                            <a href="/admin/products">
+                                                <button className="dropdown-item" type="button">
+                                                    <i className="fas fa-tachometer-alt mr-2"></i>Admin Dashboard
+                                                </button>
+                                            </a>
+                                        )}
+                                        <a href="/my-orders">
+                                            <button className="dropdown-item" type="button">
+                                                <i className="fas fa-box mr-2"></i>My Orders
+                                            </button>
+                                        </a>
+                                        <button className="dropdown-item" type="button" onClick={() => signoutHandler()}>
+                                            <i className="fas fa-sign-out-alt mr-2"></i>Sign Out
+                                        </button>
+                                    </>
+                                ) : (
+                                    <>
+                                        <a href="/sign-in">
+                                            <button className="dropdown-item" type="button">
+                                                <i className="fas fa-sign-in-alt mr-2"></i>Sign in
+                                            </button>
+                                        </a>
+                                        <a href="/sign-up">
+                                            <button className="dropdown-item" type="button">
+                                                <i className="fas fa-user-plus mr-2"></i>Sign up
+                                            </button>
+                                        </a>
+                                    </>
+                                )}
+                            </div>
+                        </div>
+                        <div className="d-inline-flex align-items-center">
+                            <a href="/cart" className="btn px-0 ml-2">
                                 <i className="fas fa-shopping-cart text-dark"></i>
                                 <span className="badge text-dark border border-dark rounded-circle"
                                     style={{ paddingBottom: '2px' }}>{itemCount}</span>
