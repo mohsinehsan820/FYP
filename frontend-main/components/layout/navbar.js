@@ -60,7 +60,7 @@ export default function Navbar() {
                     <div className="col-lg-4 col-6 text-right d-flex justify-content-end align-items-center">
                         <div>
                             <p className="m-0">Customer Service</p>
-                            <h5 className="m-0">+012 345 6789</h5>
+                            <h5 className="m-0">+92 301 4417103</h5>
                         </div>
                         <div className="btn-group pl-4">
                             <button type="button" className="btn btn-sm btn-light dropdown-toggle"

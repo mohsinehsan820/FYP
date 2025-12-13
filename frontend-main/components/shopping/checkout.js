@@ -78,7 +78,7 @@ export default function Checkout() {
                                 <InputField
                                     label="First Name"
                                     name="firstName"
-                                    placeholder="Hamna"
+                                    placeholder="John"
                                     value={formik.values.firstName}
                                     onChange={formik.handleChange}
                                     error={formik.errors.firstName}
@@ -88,7 +88,7 @@ export default function Checkout() {
                                 <InputField
                                     label="Last Name"
                                     name="lastName"
-                                    placeholder="Shafiq"
+                                    placeholder="Doe"
                                     value={formik.values.lastName}
                                     onChange={formik.handleChange}
                                     error={formik.errors.lastName}

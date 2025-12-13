@@ -16,7 +16,7 @@ export default function Footer() {
                         </p>
                         <p className="mb-0">
                             <i className="fa fa-phone-alt text-primary mr-3"></i>
-                            +92 xxx xxxxxx
+                            +92 301 4417103
                         </p>
                     </div>
 

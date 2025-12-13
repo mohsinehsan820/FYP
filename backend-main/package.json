@@ -9,7 +9,7 @@
   "description": "This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/HamnaShafiq/backend.git"
+    "url": "git+https://github.com/MohsinEhsan/backend.git"
   },
   "keywords": [
     "departmental",
@@ -18,9 +18,9 @@
   "author": "BAZARISTAN",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/HamnaShafiq/backend/issues"
+    "url": "https://github.com/MohsinEhsan/backend/issues"
   },
-  "homepage": "https://github.com/HamnaShafiq/backend#readme",
+  "homepage": "https://github.com/MohsinEhsan/backend#readme",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",

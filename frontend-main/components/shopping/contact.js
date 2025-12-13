@@ -49,8 +49,8 @@ export default function Contact() {
                         </div>
                         <div className="bg-light p-30 mb-3">
                             <p className="mb-2"><i className="fa fa-map-marker-alt text-primary mr-3"></i>Lahore, Pakistan</p>
-                            <p className="mb-2"><i className="fa fa-envelope text-primary mr-3"></i>info@example.com</p>
-                            <p className="mb-2"><i className="fa fa-phone-alt text-primary mr-3"></i>+012 345 67890</p>
+                            <p className="mb-2"><i className="fa fa-envelope text-primary mr-3"></i>rajpoot.mohsin2002@gmail.com</p>
+                            <p className="mb-2"><i className="fa fa-phone-alt text-primary mr-3"></i>+92 301 4417103</p>
                         </div>
                     </div>
                 </div>
