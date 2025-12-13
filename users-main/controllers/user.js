@@ -40,7 +40,7 @@ exports.login = async (req, res) => {
 
         if (!matchPassword) { throw new ThrowError('Incorrect password.') }
 
-        const token = jwt.sign({ userId: user._id }, process.env.JWT_TOKEN_KEY, { expiresIn: '24h' })
+        const token = jwt.sign({ userId: user._id }, process.env.JWT_TOKEN_KEY, { expiresIn: '7d' })
 
         const data = { user, token }
         

@@ -7,20 +7,46 @@ import { Provider, useDispatch, useSelector } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useEffect } from 'react';
-import { login, setInitialized } from '@/redux/authSlice';
+import { login, logout, setInitialized } from '@/redux/authSlice';
+import axios from 'axios';
+
+const PRIVATE_API_URL = process.env.NEXT_PUBLIC_USER_API_URL;
 
 const AuthInitializer = () => {
   const dispatch = useDispatch()
+  
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const token = localStorage.getItem('token');
-      const user = JSON.parse(localStorage.getItem('user'));
-      if (token && user) {
-        dispatch(login({ token, user }))
+    const validateToken = async () => {
+      if (typeof window !== 'undefined') {
+        const token = localStorage.getItem('token');
+        const user = localStorage.getItem('user');
+        
+        if (token && user) {
+          try {
+            // Validate token with backend
+            const response = await axios.get(
+              `${PRIVATE_API_URL}/api/user/validate`,
+              { headers: { 'x-access-token': token } }
+            );
+            
+            if (response.data.success) {
+              // Token is valid, restore session
+              dispatch(login({ token, user: JSON.parse(user) }));
+            }
+          } catch (error) {
+            // Token is invalid or expired, logout user
+            console.log('Token validation failed:', error.response?.data?.msg || error.message);
+            dispatch(logout());
+          }
+        }
+        
+        dispatch(setInitialized());
       }
-      dispatch(setInitialized());
-    }
+    };
+    
+    validateToken();
   }, [dispatch])
+  
   return null;
 }
 

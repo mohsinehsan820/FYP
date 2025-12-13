@@ -8,8 +8,9 @@ const PRIVATE_API_URL = process.env.NEXT_PUBLIC_USER_API_URL;
 
 export const CartProvider = ({ children, isAuthenticated }) => {
     const [cartItems, setCartItems] = useState([]);
+    const [isInitialLoad, setIsInitialLoad] = useState(true);
 
-    const fetchAllCartItems = async () => {
+    const fetchAllCartItems = async (showError = true) => {
         try {
             const token = localStorage.getItem('token');
 
@@ -19,8 +20,16 @@ export const CartProvider = ({ children, isAuthenticated }) => {
             );
             setCartItems(response.data.data)
         } catch (error) {
-            console.log("Error in adding to cart", error);
-            toast.error(error.response?.data?.msg || "Failed to read cart.");
+            console.log("Error in fetching cart", error);
+            // Only show error toast if it's not an authentication error on initial load
+            const isAuthError = error.response?.status === 401 || error.response?.status === 403;
+            if (showError && !(isInitialLoad && isAuthError)) {
+                toast.error(error.response?.data?.msg || "Failed to read cart.");
+            }
+        } finally {
+            if (isInitialLoad) {
+                setIsInitialLoad(false);
+            }
         }
     };
    
@@ -131,7 +140,9 @@ export const CartProvider = ({ children, isAuthenticated }) => {
     };
 
     useEffect(() => {
-        { isAuthenticated && fetchAllCartItems(); }
+        if (isAuthenticated) {
+            fetchAllCartItems(false); // Don't show error on initial auth
+        }
     }, [isAuthenticated]);
 
     return (
